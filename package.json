@@ -1,0 +1,11 @@
+{
+  "name": "p6-test",
+  "version": "1.0.0",
+  "description": "Projet 6 d'openclassroom",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./src/sass/_style.scss:./public/css/style.css"
+  },
+  "author": "LESGUER Mikael",
+  "license": "ISC"
+}

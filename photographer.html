@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="public/assets/images/logo.svg" />
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous" />
+    <title>Fisheye - photographe</title>
+  </head>
+  <body>
+    <header>
+      <a href="index.html">
+      <img src="public/assets/images/logo.svg" class="logo" title="logo rouge sur un fond blanc"/></a>
+    </header>
+    <main id="main">
+
+      <div class="photographe_header"></div>
+      
+      <div class="works-sort">
+        <span id="sort-text">Trier par</span>
+        <div id="sort-wrapper">
+          <button type="button" class="sort-btn" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="select-filter-by">Popularité
+            <div class="fas fa-chevron-down arrow-down" role='button'></div>
+          </button>
+            <ul class="hidden-sort" role="listbox" tabindex="-1" aria-labelledby="select-filter-by" aria-activedescendant="popularity">
+              <li class="sort sort-radius-1" role='option' data-filter="popularity" aria-selected="true">Popularité <span class="fas fa-chevron-up arrow-up-close" aria-hidden="true"></span></li>
+              <li class="sort sort-li" role='option' data-filter="date" aria-selected="false">Date</li>
+              <li class="sort sort-li sort-radius-2" role='option' data-filter="title" aria-selected="false">Tître</li>
+            </ul>
+        </div>
+      </div>
+
+      <div class="displayMediaSection"></div>
+      
+      <aside class="works-lightbox" aria-hidden="true">
+        <article class="lightbox-body" role='dialog'>          
+            <span class="fas fa-times close-lightbox-icon" role="button" title="Close dialog"></span>
+            <span class="fas fa-chevron-left left-arrow-lightbox" role="button" title="Previous image"></span>
+            <span class="fas fa-chevron-right right-arrow-lightbox" role="button" title="Next image"></span>
+            <div class="works-lightbox-contain" role="display media"></div>
+        </article>
+      </aside>
+
+      <div class="boxLikesPrice"></div>
+
+    </main>
+    <!--CONTACT-->
+    <div id="contact_modal" role="dialog" aria-labelledby="contact-me" aria-modal="true">
+      <div class="modal">
+        <header>
+          <h2 tabindex="0" id="contact-me">Contactez-moi</h2>
+          <h2 tabindex="0" id="contact-me-name"></h2>
+        </header>
+        <form>
+          <div>
+            <label for="first">Prénom</label>
+            <input class="text-control" type="text" id="first" name="first" minlength="2"/>
+            <span></span>
+            <br />
+          </div>
+          <div>
+            <label for="last">Nom</label>
+            <input class="text-control" type="text" id="last" name="last" minlength="2"/>
+            <span></span>
+            <br />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input class="text-control" type="email" id="email" name="email" />
+            <span></span>
+            <br />
+          </div>
+          <div class="message-div">
+            <label for="message">Votre message</label>
+            <textarea class="text-control" id="message" name="message"></textarea>
+            <span></span>
+            <br />
+          </div>
+          <button class="contact_button">Envoyer</button>
+        </form>
+        <button aria-label="close contact form" class="modal_cross" role="button">
+          <img src="public/assets/icons/close.svg" alt="Close Contact form" />
+        </button>
+      </div>
+    </div>
+
+    <script src="/js/profile.js" type="module"></script>
+  </body>
+</html>
