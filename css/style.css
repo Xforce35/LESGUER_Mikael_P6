@@ -120,14 +120,34 @@ main {
   color: #000000;
 }
 
-@media screen and (max-width: 760px) {
+@media (min-width: 320px) and (max-width: 1023px) {
   header {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     height: 40px;
-    margin-top: 10px;
+    margin-top: 40px;
+  }
+
+  h1 {
+    margin-right: 0px;
   }
   .logo {
     margin-left: 0px;
+    margin-bottom: 20px;
     height: 35px;
+  }
+  .photographer_section {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    margin-top: 50px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .photographer_section {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    margin-top: 75px;
   }
 }

@@ -158,7 +158,6 @@
   position: fixed;
   right: 36px;
   bottom: 0;
-  z-index: 8;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -169,9 +168,6 @@
 .boxLikesPrice__price {
   margin-left: auto;
 }
-.works-sort {
-  display: none;
-}
 .arrow-down {
   color: #fff;
   margin-left: 96px;
@@ -180,7 +176,8 @@
 
 .arrow-up-close {
   color: #fff;
-  margin-left: 26px;
+  margin-left: 30px;
+  position: absolute;
 }
 
 /* .hidden-sort li {
@@ -194,9 +191,9 @@
 .sort {
   background: #901c1c;
   color: #fff;
-  font-size: 19px;
+  font-size: 16px;
   font-weight: 500;
-  padding: 20px;
+  padding: 10px 20px;
 }
 
 .sort-radius-1 {
@@ -207,7 +204,7 @@
   border-radius: 0px 0px 5px 5px;
 }
 
-.sort-li::before {
+.sort-li ::before {
   border: white solid 1px;
 }
 .sort-btn {
@@ -220,7 +217,6 @@
   font-size: 16px;
   font-weight: 500;
   justify-content: flex-start;
-  left: 176px;
   padding: 10px 20px;
   position: absolute;
   top: 410px;
@@ -228,25 +224,24 @@
 }
 
 .works-sort {
-  display: block;
-  margin-top: 32px;
+  display: flex;
+  gap: 15px;
+  margin-block: 30px;
 }
 
 .works-sort > span {
   font-size: 19px;
   font-weight: 700;
-  margin-right: 25px;
 }
 
-ul.hidden-sort {
+.hidden-sort {
   border-radius: 5px;
   color: #fff;
   display: none;
-  left: 167px;
   padding: 0;
   position: absolute;
   top: 410px;
-  width: 176px;
+  width: 160px;
   z-index: 10;
 }
 
@@ -272,7 +267,7 @@ ul.hidden-sort li:nth-child(1) {
   text-align: center;
   top: 3%;
   transform: translate(-50%, 0);
-  width: 60%;
+  width: 70%;
 }
 
 .works-lightbox-contain {
@@ -289,9 +284,17 @@ ul.hidden-sort li:nth-child(1) {
 .works-lightbox-media-video {
   background-color: rgba(255, 255, 255, 0);
   overflow: hidden;
-  width: 750px;
-  margin-top: 500px;
-  margin-bottom: 500px;
+  width: 500px;
+  margin-top: 400px;
+  margin-bottom: 250px;
+}
+
+.works-lightbox-name {
+  color: #901c1c;
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
 }
 
 .works-lightbox-media img,
@@ -303,44 +306,40 @@ ul.hidden-sort li:nth-child(1) {
 
 .close-lightbox-icon {
   color: #901c1c;
-  font-size: 1.7rem;
+  font-size: 27px;
   position: absolute;
-  right: -3rem;
-  top: 0.5rem;
+  right: -40px;
+  top: 8px;
+  cursor: pointer;
 }
 
 .left-arrow-lightbox {
   color: #901c1c;
-  font-size: 2rem;
-  left: -3rem;
+  font-size: 32px;
+  left: -40px;
   position: absolute;
   top: 48%;
+  cursor: pointer;
 }
 
 .right-arrow-lightbox {
   color: #901c1c;
-  font-size: 2rem;
+  font-size: 32px;
   position: absolute;
-  right: -3rem;
+  right: -40px;
   top: 48%;
+  cursor: pointer;
 }
 
 aside {
   background-color: #fff;
   display: none;
-  height: 200vw;
+  height: 100%;
   left: 0;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 2;
-}
-
-aside article:nth-last-child(1) {
-  color: #901c1c;
-  font-family: sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
 }
 
 /* modale de contact */
@@ -400,13 +399,12 @@ form label {
 
 form div {
   width: 100%;
-
   margin: 0;
 }
 .text-control {
   border: none;
   margin: 0;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
   padding: 8px;
   width: 100%;
   border-radius: 5px;
@@ -438,22 +436,28 @@ form div {
   display: none;
 }
 
+.style {
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+  font-size: inherit;
+}
+
 @media (min-width: 320px) and (max-width: 760px) {
   .displayMediaSection {
     justify-content: center;
     padding-bottom: 0px;
+    padding-top: 5px;
   }
-
   .displayMediaSection__mediaCard__picture {
     width: 260px;
     height: 260px;
     object-position: 50% 25%;
   }
-
   .displayMediaSection__mediaCard__desc {
     font-size: 16px;
   }
-
   .boxLikesPrice {
     width: 150px;
     height: 40px;
@@ -461,68 +465,190 @@ form div {
     bottom: 2px;
     font-size: 12px;
     padding: 15px 15px 10px 15px;
+    border-radius: 5px;
   }
-
   .boxLikesPrice svg {
     width: 10px;
     height: 10px;
   }
-
   .photographer__profileCard__contactButton {
     font-size: 16px;
     position: fixed;
     bottom: 2px;
     right: -70px;
-    z-index: 3;
+    z-index: 1;
     transform: translateX(-50%);
     height: 40px;
     width: 150px;
   }
   .photographer__profileCard {
-    padding: 0px;
-    height: 200px;
+    margin: 0 auto;
+    padding: 0 10px;
+    height: 180px;
     width: 280px;
   }
   .photographer__profileCard__infos__name {
-    font-size: 22px;
+    font-size: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
   .photographer__profileCard__infos__location {
-    font-size: 18px;
-  }
-  .photographer__profileCard__infos__description {
     font-size: 16px;
   }
+  .photographer__profileCard__infos__description {
+    font-size: 13px;
+    margin-top: 30px;
+  }
   .photographer__profileCard__picture {
-    width: 140px;
-    height: 140px;
+    width: 100px;
+    height: 100px;
   }
   .works-sort {
-    margin-top: 13px;
+    margin-block: 15px;
   }
   .works-sort > span {
     font-size: 12px;
-    margin-left: 18px;
+    margin-left: 16px;
   }
   .sort-btn {
     font-size: 12px;
-    width: 100px;
-    left: 90px;
-    top: 258px;
+    width: 120px;
+    top: 266px;
   }
-
+  .hidden-sort {
+    font-size: 12px;
+    width: 100px;
+    top: 266px;
+  }
+  .sort {
+    font-size: 12px;
+    width: 120px;
+  }
   .arrow-down {
-    margin-left: 58px;
+    margin-left: 70px;
+  }
+  .arrow-up-close {
+    margin-left: 70px;
+  }
+  .works-lightbox-contain {
+    margin-top: 130px;
+  }
+  .works-lightbox-media {
+    width: 100%;
+    object-fit: cover;
+    height: 250px;
+  }
+  .works-lightbox-media-video {
+    margin-top: 50px;
+    height: 160px;
+    width: 220px;
+    margin-bottom: 10px;
+  }
+  .modal {
+    width: 90%;
+    padding: 15px 30px;
+    top: 15px;
+  }
+  .modal header {
+    height: 51px;
+    justify-content: flex-end;
+    margin-top: 26px;
+  }
+  .modal header h2 {
+    font-size: 25px;
+  }
+  form label {
+    font-size: 14px;
+  }
+  .text-control {
+    padding: 4px;
+    height: 30px;
+  }
+  .modal_cross-icons {
+    width: 20px;
+  }
+  .contact_button {
+    height: 40px;
+    width: 100px;
+    font-size: 14px;
+  }
+  .modal_cross {
+    top: 20px;
+    right: 16px;
   }
 }
 
-@media (min-width: 761px) and (max-width: 1024px) {
+@media (min-width: 761px) and (max-width: 1000px) {
   .displayMediaSection {
-    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 0px;
+    padding-top: 5px;
   }
+
+  .photographer__profileCard {
+    height: 260px;
+    width: 690px;
+  }
+
+  .photographer__profileCard__infos__name {
+    font-size: 38px;
+  }
+
+  .photographer__profileCard__infos__location {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  .photographer__profileCard__picture {
+    height: 150px;
+    width: 150px;
+    margin-left: 60px;
+  }
+
+  /* .photographer__profileCard__contactButton {
+    margin-left: 55px;
+  } */
+  .displayMediaSection__mediaCard {
+    padding-bottom: 35px;
+  }
+
   .displayMediaSection__mediaCard__picture {
-    min-width: 325px;
-    max-width: 350px;
-    min-height: 325px;
-    max-height: 350px;
+    width: 591.19px;
+    height: 591.19px;
+  }
+
+  .sort {
+    width: 160px;
+  }
+
+  .sort-btn {
+    top: 365px;
+  }
+  .modal header {
+    margin-top: 20px;
+  }
+  .modal {
+    width: 90%;
+    padding: 15px 30px;
+    top: 15px;
+  }
+  .modal_cross {
+    top: 25px;
+    right: 35px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1339px) {
+  .photographer__profileCard {
+    height: 240px;
+  }
+  .photographer__profileCard__infos__name {
+    font-size: 50px;
+  }
+  .photographer__profileCard__picture {
+    margin-left: 100px;
+  }
+  .sort-btn {
+    top: 354px;
   }
 }
