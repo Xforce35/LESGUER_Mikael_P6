@@ -4,7 +4,7 @@ export default class VideoTemplate {
         <article data-date=${date} class="displayMediaSection__mediaCard" data-id="${id}">
             <a href="#" class="displayMediaSection__mediaCard__link" aria-label="${title}, closeup view">
                 <video class="displayMediaSection__mediaCard__picture" title=${title}>
-                    <source src="public/assets/media/${src}" type="video/mp4">
+                    <source src="public/assets/media/${src}" type="video/mp4" alt="${title}">
                 </video>
             </a>
             <div class="displayMediaSection__mediaCard__desc">
