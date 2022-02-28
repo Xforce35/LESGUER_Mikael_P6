@@ -56,7 +56,6 @@ class Portfolio {
     }
 
     listenDropdown() {
-        console.log('444');
         this.openButton = document.querySelector('.sort-btn');
         this.closeButton = document.getElementsByClassName('arrow-up-close');
         // let hiddenSort = document.getElementsByClassName('hidden-sort');
@@ -72,12 +71,12 @@ class Portfolio {
             document.querySelector(`body:not(.sort-btn):not(.hidden-sort)`).addEventListener('click', (e) => {
                 e.stopPropagation()
 
-                // console.log('on essaye de fermer', e.target.classList)
-                if(!e.target.classList.contains('sort')) {
+                console.log('on essaye de fermer', e.target.classList)
+                if(!e.target.classList.contains('style')) {
                    this.closeDropdown(); 
                 } else {
-                    let filter = e.target.getAttribute('data-filter');
-                    console.log('on veut filtrer par', filter)
+                    let filter = e.target.getAttribute('data-filter')  ;
+                    // console.log('on veut filtrer par', filter)
                     this.filter(filter);
                     // document.querySelector('.sort-btn').innerText = filter;
                     this.updateMedia();                    
@@ -118,7 +117,7 @@ class Portfolio {
                     this.filterByTitle();
                     break;
         }
-        console.log(filter)
+        console.log([filter.length])
         this.optionscontainers = filter
     }
 
