@@ -19,7 +19,7 @@
 
       <div class="photographe_header"></div>
       
-      <div class="works-sort">
+      <div class="works-sort" aria-haspopup="listbox" aria-expanded="false">
         <span role="input label" aria-label="Choix du tri des photos" id="sort-text">Trier par</span>
         <div id="sort-wrapper">
           <button type="button" role="button" class="sort-btn" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="select-filter-by" aria-label="Tri actuel par Popularité">Popularité
@@ -54,7 +54,7 @@
           <h2 tabindex="0" id="contact-me">Contactez-moi</h2>
           <h2 tabindex="0" id="contact-me-name"></h2>
         </header>
-        <form>
+        <form class="form-modal">
           <div>
             <label for="first">Prénom</label>
             <input class="text-control" type="text" id="first" name="first" minlength="2"/>
@@ -79,7 +79,7 @@
             <span id="error-message"></span>
             <br />
           </div>
-          <button class="contact_button">Envoyer</button>
+          <button class="contact_button" type="submit">Envoyer</button>
         </form>
         <button aria-label="close contact form" class="modal_cross" role="button">
           <img class="modal_cross-icons" src="public/assets/icons/close.svg" alt="Close Contact form" />

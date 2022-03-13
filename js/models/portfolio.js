@@ -76,7 +76,7 @@ class Portfolio {
                    this.closeDropdown(); 
                 } else {
                     let filter = e.target.getAttribute('data-filter')  ;
-                    // console.log('on veut filtrer par', filter)
+                    console.log('on veut filtrer par', filter)
                     this.filter(filter);
                     // document.querySelector('.sort-btn').innerText = filter;
                     this.updateMedia();                    
@@ -105,6 +105,12 @@ class Portfolio {
                 })
     }
 
+    searchFilter(e){
+        let searchFilter = e.target.closest('.style').getAttribute('data-filter');
+        searchFilter = [];
+        console.log([searchFilter]);
+    }
+
     filter(filter) {
         switch(filter) {
             case 'popularity':
@@ -117,8 +123,8 @@ class Portfolio {
                     this.filterByTitle();
                     break;
         }
-        console.log([filter.length])
-        this.optionscontainers = filter
+        // console.log([filter.length]);
+        // this.optionscontainers = filter
     }
 
     filterByPopularity() {

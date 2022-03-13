@@ -47,14 +47,15 @@ class ContactForm {
       this.validateMessage();
     })
 
-    document.getElementById("contact_modal").addEventListener("submit", (event) => {
+    document.querySelector('.form-modal').addEventListener("submit", (event) => {
       event.preventDefault();
       if (this.validateFirstName() && this.validateLastName() && this.validateEmail () && this.validateMessage ())
         {
         this.submit();
+        return
         }
         else 
-          alert('Merci de corriger les erreurs afficher')
+         {alert('Merci de corriger les erreurs afficher')}
         })
 
     document.querySelector('.modal_cross').addEventListener('click', () => {
@@ -63,7 +64,7 @@ class ContactForm {
     }
 
   submit() {
-    const submit = document.getElementById("contact_modal");
+    const submit = document.querySelector('.form-modal');
     const inputs = document.querySelectorAll(".text-control");
 
     submit.addEventListener("submit", (event) => {
@@ -82,11 +83,11 @@ class ContactForm {
               
         console.log(payLoad);
               
-        inputs.forEach((input) => {
-        // Exception ici, car on veut justement reset input (donc "reassign du vide")
-        // eslint-disable-next-line no-param-reassign
-        input.value = "";
-        });
+        // inputs.forEach((input) => {
+        // // Exception ici, car on veut justement reset input (donc "reassign du vide")
+        // // eslint-disable-next-line no-param-reassign
+        // input.value = "";
+        // });
         this.closeModal();
         })
   }

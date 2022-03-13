@@ -2,7 +2,7 @@ import PhotographerApi from './api/PhotographerApi.js';
 import ProfileCard from './templates/ProfileCard.js';
 import mediaFactory from './factories/mediaFactory.js';
 import Portfolio from './models/portfolio.js';
-import ContactForm from './utils/contactForm.js';
+import ContactForm from './models/ContactForm.js';
 
 class App{
   constructor(){
